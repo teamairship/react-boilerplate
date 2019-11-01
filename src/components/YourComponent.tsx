@@ -1,7 +1,9 @@
-import React, { FC } from "react";
+import React, { FC, useContext } from "react";
+import { AppContext } from "../context/AppProvider";
 
 const YourComponent: FC = () => {
-  return <div>Your Component</div>;
+  const { loggedIn } = useContext(AppContext);
+  return <div>You {loggedIn ? "are" : "are not"} logged in.</div>;
 };
 
 export default YourComponent;
